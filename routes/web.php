@@ -17,8 +17,16 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth'])->name('dashboard');
+Route::middleware('auth')->group(function () {
+    Route::get('dashboard', function () { return view('dashboard'); })->name('dashboard');
+
+    Route::prefix('qr-codes')->as('qrcode.')->group(function () {
+        Route::get('/', [\App\Http\Controllers\QrCodeController::class, 'index'])->name('index');
+        Route::get('create', [\App\Http\Controllers\QrCodeController::class, 'create'])->name('create');
+        Route::post('preview', [\App\Http\Controllers\QrCodeController::class, 'preview'])->name('preview');
+        Route::post('store', [\App\Http\Controllers\QrCodeController::class, 'store'])->name('store');
+        Route::get('delete/{qrcode}', [\App\Http\Controllers\QrCodeController::class, 'destroy'])->name('destroy');
+    });
+});
 
 require __DIR__.'/auth.php';

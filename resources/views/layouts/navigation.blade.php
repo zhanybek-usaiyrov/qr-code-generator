@@ -15,6 +15,9 @@
                     <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                         {{ __('Dashboard') }}
                     </x-nav-link>
+                    <x-nav-link :href="route('qrcode.index')" :active="request()->routeIs('qrcode.index')">
+                        {{ __('QR Codes') }}
+                    </x-nav-link>
                 </div>
             </div>
 
