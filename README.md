@@ -13,7 +13,7 @@ npm run dev
 
 
 ## Screenshots
-![Screenshot 2022-11-27 at 23 05 29](https://user-images.githubusercontent.com/88434147/204149635-7648d266-4179-4878-ab1a-33a5e54a9c1e.png)
-![Screenshot 2022-11-27 at 23 05 46](https://user-images.githubusercontent.com/88434147/204149637-4d951a1f-f0d5-4cf3-9e13-f43f612b20a2.png)
-![Screenshot 2022-11-27 at 23 06 04](https://user-images.githubusercontent.com/88434147/204149639-9c017dc7-e731-40d4-ac97-cac77cfc02c1.png)
+![Screenshot 2022-11-28 at 11 15 23](https://user-images.githubusercontent.com/88434147/204199501-37c93ab6-a27f-48f3-a71a-8aceaa8b3aa3.png)
+![Screenshot 2022-11-28 at 11 16 06](https://user-images.githubusercontent.com/88434147/204199509-e8278c9e-41d5-444a-af87-2fea95067300.png)
+![Screenshot 2022-11-28 at 11 16 16](https://user-images.githubusercontent.com/88434147/204199513-3739e6bd-ed25-4bc1-8cf6-5f53e7d9de4f.png)
 ![Screenshot 2022-11-27 at 23 06 25](https://user-images.githubusercontent.com/88434147/204149641-e5e06a88-c1dc-4296-94e7-e0fdc32fe585.png)
