@@ -6,11 +6,19 @@ composer install
 ./vendor/bin/sail up
 alias sail='[ -f sail ] && sh sail || sh vendor/bin/sail'
 sail artisan migrate
+sail artisan storage:link
 npm install
 npm run dev
+sail artisan db:seed 
 ```
 2. Open http://127.0.0.1:8085/
+    - email: user@gmail.com
+    - password: password
 
+## API
+- endpoint: http://localhost:8085/api/qr-code/generate
+- bearer token: 1|LjhkjkGe0GD3xasi9rZDduzULE4gyBwXNLbuDf8P
+- accepted params: content ("Mvix USA"), size (500), background_color ("rgba(255,255,255,1)"), fill_color ("rgba(0,0,0,1)")
 
 ## Screenshots
 ![Screenshot 2022-11-28 at 11 15 23](https://user-images.githubusercontent.com/88434147/204199501-37c93ab6-a27f-48f3-a71a-8aceaa8b3aa3.png)

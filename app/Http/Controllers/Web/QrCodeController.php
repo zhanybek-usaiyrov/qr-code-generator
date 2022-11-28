@@ -1,18 +1,20 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Web;
 
+use App\Http\Controllers\Controller;
 use App\Http\Requests\QrCode\PreviewRequest;
 use App\Http\Requests\QrCode\StoreRequest;
-use App\Models\QrCode;
 use App\Repositories\QrCodeRepository;
+use App\Services\QrCodeService;
 use Illuminate\Http\Request;
 
 class QrCodeController extends Controller
 {
-    public function __construct(QrCodeRepository $qrCodeRepository)
+    public function __construct(QrCodeRepository $qrCodeRepository, QrCodeService $qrCodeService)
     {
         $this->qrCodeRepository = $qrCodeRepository;
+        $this->qrCodeService = $qrCodeService;
     }
 
     /**
@@ -55,7 +57,14 @@ class QrCodeController extends Controller
      */
     public function store(StoreRequest $request)
     {
-        $this->qrCodeRepository->storeQrCode($request->validated());
+        $path = $this->qrCodeService->generate(
+            $request->validated()['string'],
+            $request->validated()['size'],
+            $request->validated()['color'],
+            $request->validated()['background'],
+        );
+
+        $this->qrCodeRepository->storeQrCode($request->validated(), $path);
 
         return redirect(route('qrcode.index'));
     }

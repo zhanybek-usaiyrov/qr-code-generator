@@ -10,14 +10,7 @@
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
             @forelse($qrCodes as $qrCode)
                     <div class="qr-code">
-                        <p class="qr">
-                            {!!
-                                QrCode::size(60)
-                                    ->color(hexdec(substr($qrCode->color, 1, 2)), hexdec(substr($qrCode->color, 3, 2)), hexdec(substr($qrCode->color, 5, 2)))
-                                    ->backgroundColor(hexdec(substr($qrCode->background, 1, 2)), hexdec(substr($qrCode->background, 3, 2)), hexdec(substr($qrCode->background, 5, 2)))
-                                    ->generate($qrCode->string)
-                            !!}
-                        </p>
+                        <img src="{{ asset($qrCode->path) }}" alt="" width="60" height="60">
                         <p class="string">{{ $qrCode->string }}</p>
                         <p class="size">{{ $qrCode->size }}</p>
                         <p class="color">{{ $qrCode->color }}</p>

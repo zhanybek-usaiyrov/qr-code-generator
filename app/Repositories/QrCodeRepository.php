@@ -11,8 +11,10 @@ class QrCodeRepository
         return QrCode::latest()->paginate(30);
     }
 
-    public function storeQrCode($request)
+    public function storeQrCode($request, $path = '')
     {
+        $request['path'] = $path;
+
         return QrCode::create($request);
     }
 

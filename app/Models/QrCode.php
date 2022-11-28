@@ -12,6 +12,7 @@ class QrCode extends Model
     protected $table = 'qr_codes';
 
     protected $fillable = [
+        'path',
         'string',
         'size',
         'color',
