@@ -28,6 +28,6 @@ class QrCodeController extends Controller
 
         $this->qrCodeRepository->storeQrCode($inputs, $path);
 
-        return view('qrcode.image', compact('path'));
+        return response()->file($path);
     }
 }
